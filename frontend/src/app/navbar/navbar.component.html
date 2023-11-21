@@ -1,0 +1,28 @@
+<ul class="navbar">
+  <div style="height: 70%">
+    <a routerLink="/">
+      <img src="/assets/images/logo_orange.svg" alt="Logo Navigateur" style="height: 100%" />
+    </a>
+  </div>
+  <ul>
+
+    <li>
+      <a routerLink="/offers">LES OFFRES</a>
+    </li>
+    <li>
+      <a routerLink="/faq">FAQ</a>
+    </li>
+    <li *ngIf="!currentUser">
+      <a routerLink="/login">Connexion</a>
+    </li>
+    <li *ngIf="currentUser">
+      <a *ngIf="currentUser.isStudent" routerLink="/profile">Mon Profil ({{currentUser.firstName}} {{currentUser.name}})</a>
+      <a *ngIf="!currentUser.isStudent" routerLink="/profile">Mon Profil ({{currentUser.name}})</a>
+    </li>
+    <li *ngIf="currentUser">
+      <a (click)="logout()">Deconnexion</a>
+    </li>
+  </ul>
+  
+
+</ul>

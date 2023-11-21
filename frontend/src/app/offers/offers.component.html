@@ -1,0 +1,20 @@
+<!--<app-offer-detail></app-offer-detail>-->
+<div style="padding-top: 2vh;">
+
+    <img class="logo" src="../../assets/images/logo_blue.svg"/>
+    <p class="slogan">Naviguez parmi les offres et trouvez celle qui vous correspond !</p>
+    <app-filter ></app-filter>
+
+    <div class="loadingScreen" *ngIf="isLoading">
+        <div class="loader"></div>
+        <h1>Chargement des offres correspondant le plus à votre recherche !</h1>
+    </div>
+
+    <div *ngIf="!isLoading && listOffers.length!=0" class="flexCol listOffers">
+        <app-offer-preview class="oneOffer button" *ngFor="let offer of listOffers" [offer]="offer"></app-offer-preview>
+    </div>
+
+    <div *ngIf="listOffers.length===0" class="noOffersDiv">
+        <h1>Désolé aucune offre ne semble correspondre à votre filtrage pour le moment...</h1>
+    </div>
+</div>

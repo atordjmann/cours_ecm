@@ -1,0 +1,26 @@
+<h2>Se connecter</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="username">Utilisateur</label>
+    <input type="text" formControlName="username" [ngClass]="{'is-invalid': submitted && formControls['username'].errors}">
+    <div *ngIf="submitted && formControls['username'].errors" class="invalid-feedback">
+      <div *ngIf="formControls['username'].errors['required']">L'utilisateur est requis</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="username">Mot de passe</label>
+    <input type="password" formControlName="password" [ngClass]="{'is-invalid': submitted && formControls['password'].errors}">
+    <div *ngIf="submitted && formControls['password'].errors" class="invalid-feedback">
+      <div *ngIf="formControls['password'].errors['required']">Le mot de passe est requis</div>
+    </div>
+  </div>
+  <div class="form-buttons">
+    <button [disabled]="loading">
+      <span *ngIf="loading"></span>
+      <a>Se connecter</a>
+    </button>
+    <a routerLink="/register">S'enregistrer</a>
+  </div>
+  <app-alert></app-alert>
+</form>
+

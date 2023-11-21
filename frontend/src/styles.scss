@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Fonts */
+
+@font-face {
+    font-family: 'EvSansBold';
+    src: url('/assets/fonts/EvSansBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EvSansLight';
+    src: url('/assets/fonts/EvSansLight.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EvSansMedium';
+    src: url('/assets/fonts/EvSansMedium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EvSansRegular';
+    src: url('/assets/fonts/EvSansRegular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EvSansThin';
+    src: url('/assets/fonts/EvSansThin.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Styles */
+
+body {
+    margin: 0;
+    margin-top: 60px;
+}
+
+h1 {
+    font-family: EvSansBold, Calibri;
+}
+
+h2 {
+    font-family: EvSansMedium, Calibri;
+}
+
+h3 {
+    font-family: EvSansRegular, Calibri;
+}
+
+h4 {
+    font-family: EvSansLight, Calibri;
+}
+
+h5 {
+    font-family: EvSansThin, Calibri;
+}
+
+body::-webkit-scrollbar-track 
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #000000bf;
+}
+
+//Container
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow-spaceBet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+//Text
+.noSpace {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.smallSpace {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.color-blue-light{
+    color:var(--color-blue-light);
+}
+
+.color-blue-medium{
+    color:var(--color-blue-medium);
+}
+
+//Style général
+
+//Materials
+input{
+    border:0px;
+    &:focus{
+        outline: none;
+    }
+}
+
+.button:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+<div class="flexRow-spaceBet boxContainer" [routerLink]="[offer.id]">
+  <div class="flexCol logo_com">
+    <img src="{{offer.srcImgCompany}}"/>
+  </div>
+  <div class="previewInfos">
+    <h2>{{offer.title}}</h2>
+    <h3>{{offer.company}}</h3>
+
+    <div class="flexRow-spaceBet">
+      <h5>{{offer.location}}</h5>
+      <h5>{{offer.type}}</h5>
+      <h5>{{offer.sector}}</h5>
+    </div>
+  </div>
+
+  <h5>{{offer.start_date}}</h5>
+
+  <h1 class="percentageMatching" [style]="colorScore">{{matchingScore}}%</h1>
+</div>

@@ -1,0 +1,69 @@
+h1{
+    text-align: center;
+    font-style: oblique;
+    font-size: x-large;
+    color:var(--color-blue-medium);
+}
+
+.listOffers{
+    padding: 5vh 0vw;
+    .oneOffer{
+        margin-bottom:1vh;
+        &:focus, &:active, &:visited{
+            outline: none;
+            -moz-outline-style: none;
+            outline-style: none;
+        }
+    }
+}
+
+.loadingScreen{
+    margin-top: 10vh;
+        
+    .loader {
+        animation: spinningColor 1.5s ease-in-out infinite;
+        margin: 50px auto;
+        border: 5px double #f0eff5;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    
+    @keyframes spinningColor {
+        0% {
+            transform: rotate(360deg);
+            border-top:5px dashed var(--color-orange);
+            border-bottom:5px dashed var(--color-blue-medium);
+        }
+        25% {
+            border-top:5px dashed var(-color-orange);
+            border-bottom:5px dashed var(--color-blue-medium);
+        }
+        50% {
+            border-top:5px dashed var(-color-orange);
+            border-bottom:5px dashed var(--color-blue-medium);
+        }
+        75% {
+            border-top:5px dashed var(-color-orange);
+            border-bottom:5px dashed var(--color-blue-medium);
+        }
+        100% {
+            border-top:5px dashed var(-color-orange);
+            border-bottom:5px dashed var(--color-blue-medium);
+        }
+    }
+}
+
+.noOffersDiv{
+    margin-top:10vh;
+}
+
+.logo{
+    width:10vw;
+    margin:auto;
+    display: block;
+}
+
+.slogan{
+    text-align:center;
+}

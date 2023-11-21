@@ -1,0 +1,37 @@
+.boxContainer{
+    width:75vw;
+    height:15vh;
+    padding:1vh 3vw;
+    margin:auto;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    border-radius:10px;
+    align-items: center;
+}
+
+.logo_com
+{
+    height: 15vh;
+    width:10vw;
+    justify-content: center;
+    
+}
+
+img
+{
+    display: block;
+    max-height:100%;
+    max-width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.previewInfos {width:50%;margin-left:1vw;}
+.previewInfos h2,h3 {margin:0;padding:0;}
+.previewInfos h5 {margin-bottom:0;margin-top:2vh;}
+
+.percentageMatching{
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

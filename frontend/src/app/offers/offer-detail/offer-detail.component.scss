@@ -1,0 +1,91 @@
+.banner h1, h4
+{   
+    padding:0;margin:0;
+    color: #FBFEF9;
+    font-size: 48px;
+    text-shadow: #000004 0px 0px 4px;
+    text-align: center;
+}
+
+.banner h4 {font-size:24px;}
+
+.banner
+{
+    background-image: url(../../../assets/images/background-test.jpg);
+    background-repeat: no-repeat;
+    height:600px;
+    background-size: 100%;
+    display: block;
+    align-items: center;
+}
+
+.logo-ent
+{
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    margin-top: auto;margin-bottom: auto;
+    filter: drop-shadow(#0000047a 0px 0px 4px);
+    z-index: 2;
+}
+
+.matching
+{
+    width: 150px;
+    height: 150px;
+    margin-right:auto;margin-left:auto;
+    margin-top: -10%; 
+    display: flex;
+    color:#000004;
+    background-color: white;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow:#0000047a 0px 0px 10px;
+}
+
+.matching h1 {font-size:48px;}
+
+.matching h4
+{
+    padding:0;margin:0;
+    color:#000004;
+    text-shadow: none;
+}
+
+h1 {font-size: 24px;}
+
+.offer-sheet
+{
+    background-color: white;
+    padding:3%;margin:5%;
+    margin-top: 100px;
+    box-shadow:#0000047a 0px 0px 10px; 
+    text-align: justify;
+}
+
+
+.offer-sheet ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.btn-success
+{
+    background-color:#EA8122;
+    border-color: transparent;
+    box-shadow: #0000047a 0px 0px 5px;
+    margin-left:45%;margin-right:45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.btn-success:hover
+{
+    background-color:rgb(201, 110, 30);
+    border-color: transparent;
+}

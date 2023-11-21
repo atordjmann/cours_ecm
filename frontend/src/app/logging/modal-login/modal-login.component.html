@@ -1,0 +1,21 @@
+<div>
+  <img class="logoModale" src="../../../assets/img/logo.png" />
+
+  <div class="logosApiAuth flexRow-spaceBet">
+    <div class="divImage logoLinkedin">
+      <img src="../../../assets/img/logoLinkedin.svg" />
+    </div>
+    <div class="divImage logoGoogle">
+      <img src="../../../assets/img/logoGoogle.svg" />
+    </div>
+  </div>
+
+  <div class="raddioDiv flexRow">
+    <div class="oneType" [ngClass]="{'typeSelected': form.type=='etudiant'}">
+      <p class="noSpace">Etudiant</p>
+    </div>
+    <div class="oneType" [ngClass]="{'typeSelected': form.type=='entreprise'}">
+      <p class="noSpace">Entreprise</p>
+    </div>
+  </div>
+</div>

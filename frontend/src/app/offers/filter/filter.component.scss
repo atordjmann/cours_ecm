@@ -1,0 +1,101 @@
+img{
+    width: 2vh;
+    height: 2vh;
+}
+
+.mainFilterText{
+    margin-top: 10vh;
+    width: 50vw;
+    margin: auto;
+    padding: 1vh 2vw 1vh 5vw;
+    border-radius:50px;
+    box-shadow: var(--shadow-light);
+
+    input{
+        font-size: 1.4em;
+        border-bottom:1px solid var(--color-blue-light);    //TODO: j'aime pas trop le soulignage et le Rechercher en gros
+        width:30vw;
+    }
+}
+
+.boxMandatory{
+    box-shadow: #00000447 0px 3px 5px;
+    width: 50vw;
+    margin:auto;
+    padding: 1vh;
+    position: relative;
+    margin-bottom: 5px;
+    h1{
+        text-align: center;
+    }
+    p{
+        color:#adadad;
+    }
+}
+
+.listSelect{
+    width:90%;
+    margin:auto;
+    margin-top: 3vh;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix{
+    box-shadow: var(--shadow-light);        //TOOD:revoir taille des box qui dépassent
+    border-radius: 50px;
+    padding: 0.5vh 1vw 0.5vh 1vw;
+    border-top: 0px;
+    p{
+        width:10vw;
+    }
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
+    height:0px !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label,::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform:translateY(-1.68125em) scale(.75) perspective(100px) translateZ(.001px) !important;
+}
+
+::ng-deep .mat-form-field-label-wrapper{
+    overflow:visible !important;
+}
+
+::ng-deep .mat-form-field-ripple{
+    background-color:transparent !important;
+}
+
+::ng-deep .mat-select-value-text{
+    color:#adadad !important;
+}
+
+.textOpenMoreCriteria{
+    text-align: center;
+    margin-bottom:1vh;
+}
+
+.logoShowMoreCriteria{
+    width: 5vh;
+    height: 5vh;
+    position: absolute;
+    bottom: -2.5vh;
+    left: 24vw;
+    transform: rotate(0deg);
+    transition-property: all;
+    transition-duration: 0.2s;
+}
+
+.moreFilterDiv{
+    width:80vw;
+    padding:1vw;
+    margin: auto;
+    box-shadow: var(--shadow-light);
+
+    p{
+        color:#adadad;
+    }
+}
+
+.moreFilterOpenImg{
+    transform: rotate(180deg);
+}
