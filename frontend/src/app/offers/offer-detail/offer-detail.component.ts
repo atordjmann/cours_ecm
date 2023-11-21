@@ -1,8 +1,7 @@
 import { OfferViewService } from './../offerView.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { Offer } from 'src/models/Offer';
+import { Offer } from '../../../models/Offer';
 
 @Component({
   selector: 'app-offer-detail',

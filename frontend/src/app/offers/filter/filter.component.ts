@@ -2,15 +2,13 @@ import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-
 import { OfferViewService } from '../offerView.service';
-
-import { Filter } from 'src/models/Filter';
-import { Offer } from 'src/models/Offer';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MatDatepicker } from '@angular/material/datepicker';
 import * as _moment from 'moment';
 import {default as _rollupMoment, Moment} from 'moment';
+import { Filter } from '../../../models/Filter';
+import { Offer } from '../../../models/Offer';
 
 const moment = _rollupMoment || _moment;
 

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Offer } from '../../models/Offer';
-import { Filter } from 'src/models/Filter';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs';
+import { Filter } from '../../models/Filter';
 
 @Injectable()
 export class OfferViewService {
