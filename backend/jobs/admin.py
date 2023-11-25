@@ -1,19 +1,28 @@
 from django.contrib import admin
 
-from backend.jobs.models import Offer, Company
+from jobs.models import Offer, Company
 
 
 class OfferAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {"fields": ["jobTitle"]}),
+        (None, {"fields": ["title"]}),
         (None, {"fields": ["company"]}),
         (None, {"fields": ["location"]}),
-        ("Date information", {"fields": ["pub_date"], "classes": ["collapse"]}),
+        (None, {"fields": ["srcImgCompany"]}),
+        (None, {"fields": ["sector"]}),
+        (None, {"fields": ["type"]}),
+        (None, {"fields": ["description"]}),
+        (None, {"fields": ["remuneration"]}),
+        (None, {"fields": ["duration"]}),
+        (None, {"fields": ["softSkills"]}),
+        (None, {"fields": ["domains"]}),
+        (None, {"fields": ["start_date"]}),
+        ("Date information", {"fields": ["created_date"], "classes": ["collapse"]}),
     ]
     inlines = []
-    list_display = ["jobTitle", "pub_date", "was_published_recently"]
-    list_filter = ["pub_date"]
-    search_fields = ["jobTitle"]
+    list_display = ["title", "company", "created_date", "was_published_recently"]
+    list_filter = ["created_date"]
+    search_fields = ["title"]
 
 
 class CompanyAdmin(admin.ModelAdmin):

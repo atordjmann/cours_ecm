@@ -1,4 +1,3 @@
-from django.db import models
 import datetime
 from django.db import models
 from django.utils import timezone
@@ -16,34 +15,46 @@ class Company(models.Model):
 
 
 class Offer(models.Model):
+    id: models.IntegerField()
+    id_company: models.IntegerField()
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    jobTitle = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
-    pub_date = models.DateTimeField("date published")
+    srcImgCompany = models.CharField(max_length=50)
+    sector = models.CharField(max_length=50)
+    type = models.CharField(max_length=50)
+    description = models.CharField(max_length=50)
+    remuneration = models.FloatField()
+    duration = models.CharField(max_length=50)
+    softSkills = models.CharField(max_length=50)
+    domains = models.CharField(max_length=50)
+    start_date = models.DateTimeField()
+    created_date = models.DateTimeField("date published")
 
     def __str__(self):
-        return self.jobTitle
+        return self.title
 
     @admin.display(
         boolean=True,
-        ordering="pub_date",
+        ordering="created_date",
         description="Published recently?",
     )
     def was_published_recently(self):
         now = timezone.now()
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+        return now - datetime.timedelta(days=1) <= self.created_date <= now
 
 
 class User(models.Model):
-    login = models.CharField(max_length=50)
-    hash = models.CharField(max_length=200)
+    id: models.IntegerField()
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=200)
     firstName = models.CharField(max_length=50)
-    lastName = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    token = models.CharField(max_length=50)
     isStudent = models.BooleanField()
-    createdDate = models.DateTimeField()
 
     def __str__(self):
-        return self.login
+        return self.username
 
     @admin.display(
         boolean=True,

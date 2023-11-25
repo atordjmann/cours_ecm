@@ -5,4 +5,4 @@ from .models import Offer
 class OfferSerializer(serializers.ModelSerializer):
     class Meta:
         model = Offer
-        fields = ('jobTitle', 'company', 'location', 'pub_date')
+        fields = ('title', 'company', 'location', 'sector', 'type', 'created_date')

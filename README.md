@@ -12,7 +12,14 @@ The front is coded with Angular 8.
 
 ## Build back
 
+`python manage.py sqlmigrate jobs 0001`
+
+`python manage.py migrate`
+
+`python manage.py createsuperuser`
+
 `python manage.py runserver`
+
 
 ## Build front
 
