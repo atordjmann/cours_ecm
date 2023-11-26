@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GlobalService } from './global.service';
 
@@ -7,7 +7,7 @@ import { GlobalService } from './global.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'zero-xp';
   isModalLoggingActive = false;
   subscriptionIsModalLoggingActive: Subscription = new Subscription;
@@ -22,5 +22,9 @@ export class AppComponent implements OnInit {
         this.isModalLoggingActive = isModaleActive;
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptionIsModalLoggingActive.unsubscribe();
   }
 }

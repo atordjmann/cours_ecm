@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Offer } from '../../models/Offer';
 import { OfferViewService } from './offerView.service';
 import { Subscription } from 'rxjs';
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss']
 })
-export class OffersComponent implements OnInit {
+export class OffersComponent implements OnInit, OnDestroy {
 
   listOffers: Offer[] = [];
   listArticlesSubscription: Subscription = new Subscription;
@@ -30,6 +30,11 @@ export class OffersComponent implements OnInit {
         this.isLoading = isLoading;
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.listArticlesSubscription.unsubscribe();
+    this.isLoadingSubscription.unsubscribe();
   }
 
 }

@@ -21,20 +21,22 @@ export class OfferViewService {
 
     fillListOffers() {
         this.emitisLoadingSubject(true);
-        this.httpClient.get<any>(this.apiUrl + '/offres').subscribe(
-            (response) => {
-                this.listOffers = [];
-                console.log('Found ' + response.length + ' offers');
-                response.forEach((offerJson: any) => {
-                    const offer = new Offer();
-                    offer.fromHashMap(offerJson);
-                    this.listOffers.push(offer);
-                });
-                this.emitListOffersSubject();
-                this.emitisLoadingSubject(false);
-            },
-            (error) => {
-                console.log('Erreur ! : ' + error);
+        this.httpClient.get<any>(this.apiUrl + '/jobs/offers').subscribe(
+            { 
+                next: (response) => {
+                    this.listOffers = [];
+                    console.log('Found ' + response.length + ' offers');
+                    response.forEach((offerJson: any) => {
+                        const offer = new Offer();
+                        offer.fromHashMap(offerJson);
+                        this.listOffers.push(offer);
+                    });
+                    this.emitListOffersSubject();
+                    this.emitisLoadingSubject(false);
+                },
+                error: (error) => {
+                    console.log('Erreur ! : ' + error);
+                }
             }
         );
     }
@@ -47,8 +49,8 @@ export class OfferViewService {
             return;
         }
 
-        console.log(this.apiUrl + '/offres/filtered?' + query);
-        this.httpClient.get<any>(this.apiUrl + '/offres/filtered?' + query).subscribe(
+        console.log(this.apiUrl + '/offers?' + query);
+        this.httpClient.get<any>(this.apiUrl + '/offers?' + query).subscribe(
             (response) => {
                 this.listOffers = [];
                 console.log('Found ' + response.length + ' offers matching the filter');

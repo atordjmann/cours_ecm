@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import { OfferViewService } from '../offerView.service';
@@ -41,7 +41,7 @@ export const MY_FORMATS = {
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
   ],
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent implements OnInit, OnDestroy {
   currentFilter: Filter = new Filter();
 
   typeList: string[] = ['Stage', 'Alternance', 'Emploi'];
@@ -152,5 +152,9 @@ export class FilterComponent implements OnInit {
     ctrlValue.month(normalizedMonth.month());
     this.dateStart.setValue(ctrlValue);
     datepicker.close();
+  }
+
+  ngOnDestroy(): void {
+    this.listArticlesSubscription.unsubscribe();
   }
 }
