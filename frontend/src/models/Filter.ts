@@ -22,7 +22,7 @@ export class Filter {
         var query="";
         query+= this.textInput!="" ? "textinput="+this.textInput+"&" : "";
         query+= this.type!="" ? "type="+this.type+"&" : "";
-        query+= this.time!="" ? "type="+this.time+"&" : "";
+        query+= this.time!="" ? "time="+this.time+"&" : "";
         query+= this.sector!="" ? "sector="+this.sector+"&" : "";
         
         if (query!==""){

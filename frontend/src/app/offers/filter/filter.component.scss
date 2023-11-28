@@ -7,20 +7,25 @@ img{
     margin-top: 10vh;
     width: 50vw;
     margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     padding: 1vh 2vw 1vh 5vw;
     border-radius:50px;
     box-shadow: var(--shadow-light);
+    background-color: #3e4259;
 
     input{
         font-size: 1.4em;
         border-bottom:1px solid var(--color-blue-light);    //TODO: j'aime pas trop le soulignage et le Rechercher en gros
         width:30vw;
+        background-color: #3e4259;
+        color: white;
     }
 }
 
 .boxMandatory{
-    box-shadow: #00000447 0px 3px 5px;
-    width: 50vw;
+    border: 1px #00000447 solid;
+    width: 80%;
     margin:auto;
     padding: 1vh;
     position: relative;
@@ -39,36 +44,6 @@ img{
     margin-top: 3vh;
 }
 
-// ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix{
-//     box-shadow: var(--shadow-light);        //TOOD:revoir taille des box qui dépassent
-//     border-radius: 50px;
-//     padding: 0.5vh 1vw 0.5vh 1vw;
-//     border-top: 0px;
-//     p{
-//         width:10vw;
-//     }
-// }
-
-// ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
-//     height:0px !important;
-// }
-
-// ::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label,::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
-//     transform:translateY(-1.68125em) scale(.75) perspective(100px) translateZ(.001px) !important;
-// }
-
-// ::ng-deep .mat-form-field-label-wrapper{
-//     overflow:visible !important;
-// }
-
-// ::ng-deep .mat-form-field-ripple{
-//     background-color:transparent !important;
-// }
-
-// ::ng-deep .mat-select-value-text{
-//     color:#adadad !important;
-// }
-
 .textOpenMoreCriteria{
     text-align: center;
     margin-bottom:1vh;
@@ -79,17 +54,22 @@ img{
     height: 5vh;
     position: absolute;
     bottom: -2.5vh;
-    left: 24vw;
+    left: 48%;
     transform: rotate(0deg);
     transition-property: all;
     transition-duration: 0.2s;
 }
 
 .moreFilterDiv{
-    width:80vw;
+    width:80%;
     padding:1vw;
     margin: auto;
     box-shadow: var(--shadow-light);
+    background-color: #f5f5f5;
+
+    .flexRow{
+        justify-content: space-evenly;
+    }
 
     p{
         color:#adadad;

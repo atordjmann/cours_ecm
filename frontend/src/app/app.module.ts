@@ -39,6 +39,7 @@ import { AlertComponent } from './alert/alert.component';
 
 //import { fakeBackendProvider } from '../app/logging/helpers';
 import { FaqComponent } from './faq/faq.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -64,17 +65,18 @@ import { FaqComponent } from './faq/faq.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSelectModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
     MatDatepickerModule,
-    MatInputModule,
     MatSliderModule,
     MatAutocompleteModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [GlobalService, OfferViewService, UserService,
               {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
