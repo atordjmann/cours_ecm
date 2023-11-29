@@ -19,6 +19,12 @@ The front is coded with Angular 17. It uses Angular material framework.
 
 ## Build back
 
+### Prerequisites
+
+`pip install django djangorestframework django-filter django-cors-headers`
+
+### Build
+
 `python manage.py sqlmigrate jobs 0001`
 
 `python manage.py migrate`

@@ -22,7 +22,7 @@ export class OfferViewService {
     fillListOffers() {
         this.emitisLoadingSubject(true);
         this.httpClient.get<any>(this.apiUrl + '/jobs/offers').subscribe(
-            { 
+            {
                 next: (response) => {
                     this.listOffers = [];
                     console.log('Found ' + response.length + ' offers');
@@ -49,8 +49,8 @@ export class OfferViewService {
             return;
         }
 
-        console.log(this.apiUrl + '/offers?' + query);
-        this.httpClient.get<any>(this.apiUrl + '/offers?' + query).subscribe(
+        console.log(this.apiUrl + '/jobs/offers?' + query);
+        this.httpClient.get<any>(this.apiUrl + '/jobs/offers?' + query).subscribe(
             (response) => {
                 this.listOffers = [];
                 console.log('Found ' + response.length + ' offers matching the filter');
