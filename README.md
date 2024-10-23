@@ -17,6 +17,12 @@ The back is coded with Django (4.2.7) framework.
 
 The front is coded with Angular 17. It uses Angular material framework.
 
+## Dépendances à installer
+pip install django (4.7)
+pip install djangorestframework
+pip install django-filter
+pip install django-cors-headers
+
 ## Build back
 
 `python manage.py sqlmigrate jobs 0001`
