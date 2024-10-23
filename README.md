@@ -22,7 +22,7 @@ The front is coded with Angular 18. It uses Angular material framework.
 ```shell
 cd backend
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate # `.venv/Scripts/Activate.ps1` on Windows
 pip install -r requirements.txt
 
 python manage.py sqlmigrate jobs 0001
