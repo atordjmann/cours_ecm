@@ -1,0 +1,4 @@
+django~=4.2.7
+djangorestframework
+django-filter
+django-cors-headers

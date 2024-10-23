@@ -19,16 +19,22 @@ The front is coded with Angular 17. It uses Angular material framework.
 
 ## Build back
 
-`python manage.py sqlmigrate jobs 0001`
+```shell
+cd back
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 
-`python manage.py migrate`
-
-`python manage.py createsuperuser`
-
-`python manage.py runserver`
+python manage.py sqlmigrate jobs 0001
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
 
 ## Build front
 
-`npm i`
-
-`npm run start`
+```shell
+cd frontend
+npm install
+npm run start
+```
