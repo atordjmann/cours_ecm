@@ -1,6 +1,5 @@
 from django.http import HttpResponse, JsonResponse
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.viewsets import ModelViewSet
+from django_filters.rest_framework.backends import DjangoFilterBackend
 from rest_framework import viewsets, generics
 
 from .models import Offer, Company, User
@@ -34,3 +33,10 @@ class OfferViewSet(generics.ListAPIView):
         query_set = self.filter_queryset(Offer.objects.all())
         # do action on query_set
         return query_set
+
+
+class RetrieveOfferView(generics.RetrieveAPIView):
+    queryset = Offer.objects.all()
+    serializer_class = OfferSerializer
+    lookup_field = 'id'
+    http_method_names = ['get', ]

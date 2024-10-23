@@ -5,4 +5,4 @@ from .models import Offer
 class OfferSerializer(serializers.ModelSerializer):
     class Meta:
         model = Offer
-        fields = ('title', 'company', 'location', 'srcImgCompany', 'sector', 'type', 'created_date')
+        fields = '__all__'
