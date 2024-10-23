@@ -3,6 +3,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib import admin
 
+models.IntegerField()
+
 
 class Company(models.Model):
     login = models.CharField(max_length=50)
@@ -12,7 +14,6 @@ class Company(models.Model):
 
     def __str__(self):
         return self.login
-
 
 class Offer(models.Model):
     id: models.IntegerField()
