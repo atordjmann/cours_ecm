@@ -15,12 +15,12 @@ The rest of this read.me is the documentation of the project. It is deliberately
 
 The back is coded with Django (4.2.7) framework.
 
-The front is coded with Angular 17. It uses Angular material framework.
+The front is coded with Angular 18. It uses Angular material framework.
 
 ## Build back
 
 ```shell
-cd back
+cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt

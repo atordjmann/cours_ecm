@@ -13,7 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,46 +41,39 @@ import { AlertComponent } from './alert/alert.component';
 import { FaqComponent } from './faq/faq.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    OffersComponent,
-    LoggingComponent,
-    ProfileComponent,
-    FilterComponent,
-    OfferPreviewComponent,
-    OfferDetailComponent,
-    ModalLoginComponent,
-    RegisterFormComponent,
-    ProfileDetailComponent,
-    ApplicationComponent,
-    NotificationComponent,
-    OfferSquareComponent,
-    OfferCompanyComponent,
-    AlertComponent,
-    FaqComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatButtonToggleModule,
-    MatSlideToggleModule,
-    MatDatepickerModule,
-    MatSliderModule,
-    MatAutocompleteModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    FormsModule
-  ],
-  providers: [GlobalService, OfferViewService, UserService,
-              {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-              {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomeComponent,
+        OffersComponent,
+        LoggingComponent,
+        ProfileComponent,
+        FilterComponent,
+        OfferPreviewComponent,
+        OfferDetailComponent,
+        ModalLoginComponent,
+        RegisterFormComponent,
+        ProfileDetailComponent,
+        ApplicationComponent,
+        NotificationComponent,
+        OfferSquareComponent,
+        OfferCompanyComponent,
+        AlertComponent,
+        FaqComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        MatButtonToggleModule,
+        MatSlideToggleModule,
+        MatDatepickerModule,
+        MatSliderModule,
+        MatAutocompleteModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        FormsModule], providers: [GlobalService, OfferViewService, UserService,
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
